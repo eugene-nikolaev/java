@@ -58,6 +58,7 @@ def oracle_downloaded?(download_path, new_resource)
     else
       downloaded_sha =  Digest::SHA256.file(download_path).hexdigest
       downloaded_sha == new_resource.checksum
+      puts downloaded_sha.inspect
     end
   else
     return false
